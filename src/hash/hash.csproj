@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C868C595-6D58-4935-8870-42C262AB5EB8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>GrapeCity</RootNamespace>
+    <AssemblyName>GrapeCity.Crypto.Hash</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Crypto\Hash\Hash.cs" />
+    <Compile Include="Util\ByteSource.cs" />
+    <Compile Include="Util\SimpleByteSource.cs" />
+    <Compile Include="Codec\Hex.cs" />
+    <Compile Include="Codec\Base64.cs" />
+    <Compile Include="Crypto\Hash\SimpleHash.cs" />
+    <Compile Include="Crypto\Hash\Md2Hash.cs" />
+    <Compile Include="Crypto\Hash\Md5Hash.cs" />
+    <Compile Include="Crypto\Hash\Sha1Hash.cs" />
+    <Compile Include="Crypto\Hash\Sha256Hash.cs" />
+    <Compile Include="Crypto\Hash\Sha384Hash.cs" />
+    <Compile Include="Crypto\Hash\Sha512Hash.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Crypto\" />
+    <Folder Include="Crypto\Hash\" />
+    <Folder Include="Util\" />
+    <Folder Include="Codec\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>
